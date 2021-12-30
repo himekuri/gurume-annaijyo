@@ -1,61 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 簡易仕様書
+## アプリ概要
+### アプリ名
+グルメ案内所
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### コンセプト
+外出先でどこでご飯を食べるか困った人が、現在地付近のレストラン情報を検索するウェブアプリです。
+高校生〜大学生が友達との遊びやデートの際に使用するイメージです。
 
-## About Laravel
+### リポジトリ URL
+https://github.com/himekuri/gurume-annaijyo
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 開発期間
+８日間（設計４日　＋　実装４日）
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 開発環境
+### 開発環境
+Visual Studio Code 1.53.2
 
-## Learning Laravel
+### 開発言語
+JavaScript
+PHP
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### フレームワーク
+Vue.js　2.6.14
+Laravel　7.30.6
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 動作対象OS・ブラウザ
+### 対象OS
+macOS 11.6
+### 対象ブラウザ
+Google Chrome 96.0.4664.110
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## アプリケーション機能
 
-### Premium Partners
+### 機能一覧
+- レストラン検索：ホットペッパーグルメサーチAPIを使用して、現在地周辺の飲食店を検索する（距離、ジャンル、予算を指定可能）。結果を一覧で表示する。
+- 店舗詳細表示：ホットペッパーグルメサーチAPIを使用して、一覧からそれぞれの飲食店の詳細情報を表示する。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+## アプリについて
 
-## Contributing
+### こだわったポイント
+- 外出先で手軽に使うことを想定して、スマホで使いやすいようにレスポンシブデザインしました。その際、検索結果画面はgridで簡潔に実装しました。
+- 検索条件は必要最低限と思われる３つ(距離、ジャンル、予算)に絞りました。未実装ですが、その他の条件は検索結果画面の絞り込み機能で対応する予定です。
+- ページ遷移のストレスを軽減するため、SPAに挑戦しました。
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### デザイン面でこだわったポイント
+- 検索条件入力画面において、『戻る』ボタンより『次へ進む』ボタンが目立つように色と大きさに強弱をつけました。
+- 検索結果画面において、クリック範囲をそれぞれの店舗のパーツ全体にしました。さらにhoverで色が変わるようにして、操作を分かりやすくしました。
 
-## Code of Conduct
+### アドバイスして欲しいポイント
+検索結果画面と店舗詳細画面の表示が遅いのでもっと早くしたいです。
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 今後実装したい機能
+- 店舗詳細画面にGoogleMapAPIで地図を表示する機能
+- 検索条件入力画面において現在地からの距離選択時に、現在地の地図と距離を表す同心円を動的に表示する機能
+- 検索結果の絞り込み機能
+- ランダムでおすすめを表示する機能
+- 検索結果が0件だったときの表示を分かりやすくする
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 自己評価
+初めてVue.jsとLaravelを使ったSPAに挑戦したのでデータの受け渡し方など勉強になりました。
+使用場面や使用者を具体的に想像することによって、検索条件を上手く選ぶことができたと考えています。
