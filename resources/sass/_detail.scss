@@ -1,0 +1,47 @@
+.un_detail{
+	.detailBox{
+		background-color: rgba(255,255,255,0.7);
+		border-radius: 20px;
+		max-width: 550px;
+		margin: 2rem auto;
+		padding: 3rem 5rem;
+
+		.bl_img{
+			display: flex;
+			img{
+				justify-content: center;
+				margin: 0 auto;
+			}
+		}
+		.bl_detailTitle{
+			border-left: 10px solid #D98673;
+    		padding-left: 5px;
+			margin: 10px 0;
+			.bl_name{
+				color: #8D3210;
+				font-weight: bold;
+				font-size: 2rem;
+			}
+		}
+		.bl_catch{
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		.bl_detailItem{
+			background-color: rgba(255, 255, 255, 0.9);
+			border-radius: 10px;
+			padding: 5px;
+			margin: 5px 0;
+			p{
+				font-size: 1.4rem;
+			}
+			.detailLabel {
+				font-weight: bold;
+				color: #6a3f3f;
+			}
+			.bl_url{
+				word-break: break-all
+			}
+		}
+	}
+}

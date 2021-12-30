@@ -1,0 +1,348 @@
+@charset "UTF-8";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  font-size: 50%;
+}
+
+@media (min-width: 560px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #ff9b97;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+_:lang(x) + _:-webkit-full-screen-document,
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ly_container {
+  max-width: 880px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 2.4rem auto 0 auto;
+  min-height: calc(100vh - 60px);
+}
+
+/* フッター */
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  color: #FFFFFF;
+  height: 30px;
+  font-size: 12px;
+}
+
+.el_btn {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #1E3050;
+  padding: 0 1.6rem;
+  line-height: 3;
+  border-radius: 0.5rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #1E3050;
+  background-color: #F8D55B;
+  cursor: pointer;
+}
+
+.el_btn.hp_widthFull {
+  width: 100%;
+}
+
+.el_btn:hover {
+  background-color: #f8b75b;
+}
+
+.el_btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #fad35e;
+}
+
+.hp_flexEnd {
+  margin-top: auto;
+}
+
+.un_search .bl_logoImg {
+  width: 220px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+}
+
+.un_search .bl_searchBox {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  max-width: 550px;
+  max-height: 740px;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  padding: 3rem 5rem;
+}
+
+.un_search .bl_searchBox .bl_searchText {
+  margin-bottom: 20px;
+}
+
+.un_search .bl_searchBox .bl_selectWrap {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 200px;
+}
+
+.un_search .bl_searchBox .bl_selectWrap select.bl_select {
+  border-radius: 20px;
+  padding: 10px;
+  width: 200px;
+}
+
+.un_search .bl_searchBox .bl_checkGenre {
+  display: flex;
+  flex-direction: column;
+}
+
+_:lang(x) + _:-webkit-full-screen-document,
+.bl_selectWrap::after {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border: 0px;
+  border-bottom: solid 2px #d0cccc;
+  border-right: solid 2px #d0cccc;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 35%;
+  right: 10%;
+}
+
+.el_backButton {
+  width: 80px;
+  margin-bottom: 10px;
+  background: #FFFFFF;
+}
+
+.el_backButton:hover {
+  background-color: #ffe28b;
+}
+
+#overlay {
+  z-index: 1;
+  /*　画面全体を覆う設定　*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /*　画面の中央に要素を表示させる設定　*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#overlay #modal {
+  z-index: 2;
+  height: 30%;
+  width: 50%;
+  padding: 2rem;
+  border-radius: 15px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#overlay #modal button {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 2px solid #414040;
+  border-radius: 5px;
+}
+
+#overlay #modal button:hover {
+  background-color: #c4bfbf;
+}
+
+.un_result .bl_count {
+  color: #FFFFFF;
+}
+
+.un_result .bl_restaurants {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  height: 200px;
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox:hover {
+  background-color: #e2e2e1;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_logoImg {
+  margin-right: 2rem;
+  vertical-align: middle;
+  display: flex;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_logoImg img {
+  width: 100px;
+  margin: auto 0;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_textArea {
+  overflow: hidden;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_textArea .bl_title {
+  border-left: 10px solid #D98673;
+  padding-left: 5px;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_textArea .bl_title .bl_genreName {
+  font-size: 10px;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_textArea .bl_title .bl_name {
+  font-size: 16px;
+  color: #8D3210;
+  font-weight: bold;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_textArea .bl_catch {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.un_result .bl_restaurants .bl_restaurantBox .bl_textArea .bl_informationArea {
+  font-size: 8px;
+}
+
+.un_result .pagination {
+  justify-content: center;
+  display: flex;
+}
+
+.un_result .pagination li {
+  color: #FFFFFF;
+  padding: 2px;
+  margin: 10px;
+  min-width: 2rem;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+.un_result .pagination li:not(.disabled) {
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+}
+
+.un_result .pagination li:hover:not(.disabled),
+.un_result .pagination li.active {
+  background-color: #FFFFFF;
+  color: #ff9b97;
+}
+
+.un_detail .detailBox {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  max-width: 550px;
+  margin: 2rem auto;
+  padding: 3rem 5rem;
+}
+
+.un_detail .detailBox .bl_img {
+  display: flex;
+}
+
+.un_detail .detailBox .bl_img img {
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.un_detail .detailBox .bl_detailTitle {
+  border-left: 10px solid #D98673;
+  padding-left: 5px;
+  margin: 10px 0;
+}
+
+.un_detail .detailBox .bl_detailTitle .bl_name {
+  color: #8D3210;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.un_detail .detailBox .bl_catch {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.un_detail .detailBox .bl_detailItem {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.un_detail .detailBox .bl_detailItem p {
+  font-size: 1.4rem;
+}
+
+.un_detail .detailBox .bl_detailItem .detailLabel {
+  font-weight: bold;
+  color: #6a3f3f;
+}
+
+.un_detail .detailBox .bl_detailItem .bl_url {
+  word-break: break-all;
+}
+

@@ -3,10 +3,41 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 require('./bootstrap');
 
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import SearchComponent from "./components/SearchComponent.vue";
+import ResultComponent from "./components/ResultComponent.vue";
+import DetailComponent from "./components/DetailComponent.vue";
+import Paginate from 'vuejs-paginate'
+Vue.component('paginate', Paginate)
+
+
 window.Vue = require('vue');
+
+Vue.use(VueRouter);
+// vueのルーティング
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'search',
+            component: SearchComponent
+        },
+        {
+            path: '/result/',
+            name: 'result',
+            component: ResultComponent
+        },
+        {
+            path: '/detail/:id',
+            name: 'detail',
+            component: DetailComponent
+        },
+    ]
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,7 +51,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,4 +60,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    router
 });

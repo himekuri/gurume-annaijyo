@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//マスタAPIからジャンルと予算のjsonを取得
+Route::get('/', 'RestaurantController@genreBudget');
+// グルメサーチAPIで検索する
+Route::get('/result/', 'RestaurantController@searchRestaurant');
+// 詳細画面を表示する用
+Route::get('/detail/{id}', 'RestaurantController@showDetail');
+
+

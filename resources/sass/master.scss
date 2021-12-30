@@ -1,0 +1,18 @@
+// レスポンシブデザイン
+$pc: 960px;
+$tb: 560px;
+@mixin pc {
+  @media (min-width: ($pc)){
+    @content;
+  }
+}
+@mixin tb {
+  @media (min-width: ($tb)){
+    @content;
+  }
+}
+
+@import 'common.scss';
+@import 'search.scss';
+@import 'result.scss';
+@import 'detail.scss';

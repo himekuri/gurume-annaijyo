@@ -1,0 +1,93 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    font-size: 50%;
+
+    @include tb {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #ff9b97;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// safariのみ表示変える
+_:lang(x)+_:-webkit-full-screen-document, select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+// レイアウト
+.ly_container {
+    max-width: 880px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 2.4rem auto 0 auto;
+    min-height: calc(100vh - 60px);
+}
+
+/* フッター */
+footer {
+    margin-top: auto;
+    text-align: center;
+    color: #FFFFFF;
+    height: 30px;
+    font-size: 12px;
+}
+
+// ボタン
+.el_btn{
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #1E3050;
+    padding: 0 1.6rem;
+    line-height: 3;
+    border-radius: .5rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	color: #1E3050;
+    background-color: #F8D55B;
+    cursor: pointer;
+
+    &.hp_widthFull{
+        width: 100%;
+    }
+    &:hover {
+        background-color: #f8b75b;
+    }
+    &:focus{
+        outline: none;
+        box-shadow: 0 0 0 0.2rem #fad35e;
+    }
+}
+.hp_flexEnd {
+    margin-top: auto;
+}

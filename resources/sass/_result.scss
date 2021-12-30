@@ -1,0 +1,80 @@
+.un_result{
+	.bl_count{
+		color: #FFFFFF;
+	}
+	.bl_restaurants{
+		display: grid;
+		grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+		grid-gap: 30px;
+
+		.bl_restaurantBox{
+			background-color: #FFFFFF;
+			border-radius: 15px;
+			height: 200px;
+			cursor: pointer;
+			padding: 15px;
+			display: flex;
+			&:hover{
+				background-color: #e2e2e1;
+			}
+			.bl_logoImg{
+				margin-right: 2rem;
+				vertical-align: middle;
+				display: flex;
+
+				img{
+					width: 100px;
+					margin: auto 0;
+				}
+
+			}
+			.bl_textArea{
+				overflow: hidden;
+
+				.bl_title{
+					border-left: 10px solid #D98673;
+    				padding-left: 5px;
+					.bl_genreName{
+						font-size: 10px;
+					}
+					.bl_name{
+						font-size: 16px;
+						color: #8D3210;
+						font-weight: bold;
+					}
+				}
+				.bl_catch{
+					font-size: 10px;
+    				font-weight: bold;
+				}
+				.bl_informationArea{
+					font-size: 8px;
+
+				}
+
+			}
+		}
+	}
+	.pagination{
+		justify-content: center;
+		display: flex;
+		li{
+			color: #FFFFFF;
+			padding: 2px;
+			margin: 10px;
+			min-width: 2rem;
+			margin: 10px;
+			justify-content: center;
+			display: flex;
+			&:not(.disabled){
+			border: 1px solid #FFFFFF;
+			border-radius: 3px;
+			}
+			&:hover:not(.disabled),&.active{
+				background-color: #FFFFFF;
+				color: #ff9b97;
+			}
+		}
+
+	}
+}
